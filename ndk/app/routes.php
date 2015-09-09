@@ -51,3 +51,24 @@ Route::post('/meow/news/create', array('as'=>'pcreateNews', 'uses' => 'AdminCont
 Route::get('/meow/news/update/{id}', array('as'=>'updateNews', 'uses' => 'AdminController@getUpdateNews'));
 Route::put('/meow/news/update/{id}', array('as'=>'pupdateNews', 'uses' => 'AdminController@putUpdateNews'));
 Route::delete('/meow/news/delete{id}', array('as'=>'deleteNews', 'uses' => 'AdminController@deleteNews'));
+
+Route::get('/meow/scat', array('as'=>'showSCat', 'uses' => 'AdminController@getSCat'));
+Route::get('/meow/scat/create', array('as'=>'createSCat', 'uses' => 'AdminController@getCreateSCat'));
+Route::post('/meow/scat/create', array('as'=>'pcreateSCat', 'uses' => 'AdminController@postCreateSCat'));
+Route::get('/meow/scat/update/{id}', array('as'=>'updateSCat', 'uses' => 'AdminController@getUpdateSCat'));
+Route::put('/meow/scat/update/{id}', array('as'=>'pupdateSCat', 'uses' => 'AdminController@putUpdateSCat'));
+Route::delete('/meow/scat/delete{id}', array('as'=>'deleteSCat', 'uses' => 'AdminController@deleteSCat'));
+
+Route::get('/meow/tcat', array('as'=>'showTCat', 'uses' => 'AdminController@getTCat'));
+Route::get('/meow/tcat/create', array('as'=>'createTCat', 'uses' => 'AdminController@getCreateTCat'));
+Route::post('/meow/tcat/create', array('as'=>'pcreateTCat', 'uses' => 'AdminController@postCreateTCat'));
+Route::get('/meow/tcat/update/{id}', array('as'=>'updateTCat', 'uses' => 'AdminController@getUpdateTCat'));
+Route::put('/meow/tcat/update/{id}', array('as'=>'pupdateTCat', 'uses' => 'AdminController@putUpdateTCat'));
+Route::delete('/meow/tcat/delete{id}', array('as'=>'deleteTCat', 'uses' => 'AdminController@deleteTCat'));
+
+Route::get('/meow/tech', array('as'=>'showTech', 'uses' => 'AdminController@getTech'));
+Route::get('/meow/tech/create', array('as'=>'createTech', 'uses' => 'AdminController@getCreateTech'));
+Route::post('/meow/tech/create', array('as'=>'pcreateTech', 'uses' => 'AdminController@postCreateTech'));
+Route::get('/meow/tech/update/{id}', array('as'=>'updateTech', 'uses' => 'AdminController@getUpdateTech'));
+Route::put('/meow/tech/update/{id}', array('as'=>'pupdateTech', 'uses' => 'AdminController@putUpdateTech'));
+Route::delete('/meow/tech/delete{id}', array('as'=>'deleteTech', 'uses' => 'AdminController@deleteTech'));
