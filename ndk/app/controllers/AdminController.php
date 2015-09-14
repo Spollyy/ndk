@@ -271,24 +271,54 @@ class AdminController extends BaseController
         Vacancy::find($id)->delete();
         return Redirect::back();
     }
-
-    public function getTechs()
-    {
+    
+    public function getTechs(){
+        $p = Techs::paginate(25);
+        return View::make('backend.techs.show')->with('data', $p);
     }
-    public function getCreateTech()
-    {
+    public function postCreateTech(){
+        $destination = public_path('uploads');
+        $input = Input::all();
+        $p = new Techs();
+        $p->name = $input['name'];
+        $p->description = $input['description'];
+        $p->longtext = $input['longtext'];
+        if (isset($input ['file'])) {
+            $p->file = Input::file('file')->getFilename() . '.' . Input::file('file')->guessClientExtension();
+            $input ['file']->move($destination, Input::file('file')->getFilename() . '.' . Input::file('file')->guessClientExtension());
+        }
+        $p->url = $input['url'];
+        $p->save();
+        return Redirect::back();
     }
-    public function postCreateTech()
-    {
+    public function getCreateTech(){
+        return View::make('backend.techs.create');
     }
-    public function getUpdateTech($id)
-    {
+    public function getUpdateTech($id){
+        $p = Techs::find($id);
+        return View::make('backend.techs.update')->with('data', $p);
     }
-    public function putUpdateTech()
-    {
+    public function putUpdateTech($id){
+        $destination = public_path('uploads');
+        $input = Input::all();
+        $p = Techs::find($id);
+        if (isset($input ['name']))
+            $p->name = $input['name'];
+        if (isset($input ['longtext']))
+                $p->full = $input['longtext'];
+        if (isset($input ['description']))
+            $p->full = $input['description'];
+        if (isset($input ['file'])) {
+            $p->file = Input::file('file')->getFilename() . '.' . Input::file('file')->guessClientExtension();
+            $input ['file']->move($destination, Input::file('file')->getFilename() . '.' . Input::file('file')->guessClientExtension());
+        }
+        if (isset($input ['url']))
+            $p->url = $input['url'];
+        $p->save();
+        return Redirect::back();
     }
-    public function deleteTech($id)
-    {
+    public function deleteTech($id){
+        Techs::find($id)->delete();
     }
 
     public function getSCats()
