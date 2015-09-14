@@ -53,6 +53,7 @@ class Bd extends Migration {
             $table->text('short');
             $table->text('full');
             $table->char('image');
+            $table->char('url');
         });
 
         Schema::create('news_page',function($table){
@@ -81,6 +82,7 @@ class Bd extends Migration {
             $table->text('full');
             $table->char('image');
             $table->integer('cat_id');
+            $table->char('url');
         });
 
         Schema::create('projects_cat',function ($table){
@@ -122,6 +124,8 @@ class Bd extends Migration {
             $table->increments('id');
             $table->timestamps();
             $table->char('name');
+            $table->char('url');
+            $table->integer('pcat_id');
         });
 
         Schema::create('tech_page',function($table){
@@ -132,6 +136,8 @@ class Bd extends Migration {
             $table->char('keywords');
             $table->char('image');
             $table->text('text');
+            $table->char('url');
+
         });
 
         Schema::create('tech_cat',function($table){
@@ -140,16 +146,11 @@ class Bd extends Migration {
             $table->char('name');
             $table->char('image');
             $table->text('text');
+            $table->char('url');
+            $table->integer('pcat_id');
+
         });
 
-        Schema::create('tech_subcat',function($table){
-            $table->increments('id');
-            $table->timestamps();
-            $table->char('name');
-            $table->char('image');
-            $table->text('text');
-            $table->integer('cat_id');
-        });
 
         Schema::create('tech_pointeger',function($table){
             $table->increments('id');
@@ -158,7 +159,8 @@ class Bd extends Migration {
             $table->char('image');
             $table->text('description');
             $table->text('longtext');
-            $table->integer('subcat_id');
+            $table->integer('cat_id');
+            $table->char('url');
         });
 
         Schema::create('users',function($table){
