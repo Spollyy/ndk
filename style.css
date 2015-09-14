@@ -142,6 +142,7 @@ header .menu_top_left .green_button:active {
   cursor: default;
 }
 .menu_middle_right #cssmenu ul ul {
+    background: #e3d7c1;;
   visibility: hidden;
   position: absolute;
   top: 100%;
@@ -194,6 +195,7 @@ header .menu_top_left .green_button:active {
 .menu_middle_right #cssmenu ul {
   text-align: center;
   list-style: none;
+
   padding: 0;
   margin: 0;
 }
@@ -218,6 +220,8 @@ header .menu_top_left .green_button:active {
   -webkit-box-shadow: none;
 }
 .menu_middle_right #cssmenu .has-sub:hover ul {
+
+    background: #e3d7c1;
   display: block;
 }
 .menu_middle_right #cssmenu .has-sub a {
@@ -259,9 +263,9 @@ header .menu_top_left .green_button:active {
   color: #338341;
 }
 .menu_middle_right #cssmenu .has-sub .has-sub ul {
-  background: #dddddd;
+  background: #e3d7c1;
   left: 100%;
-  top: 0;
+  top: -10px;
   margin-left: 0;
 }
 .menu_middle_right #cssmenu .has-sub .has-sub ul a {
