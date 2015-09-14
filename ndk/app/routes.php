@@ -31,6 +31,13 @@ Route::get('/meow/project/update/{id}', array('as'=>'updateProject', 'uses' => '
 Route::put('/meow/project/update/{id}', array('as'=>'pupdateProject', 'uses' => 'AdminController@putUpdateProject'));
 Route::delete('/meow/project/delete{id}', array('as'=>'deleteProject', 'uses' => 'AdminController@deleteProject'));
 
+Route::get('/meow/standart', array('as'=>'showStandart', 'uses' => 'AdminController@getStandarts'));
+Route::get('/meow/standart/create', array('as'=>'createStandart', 'uses' => 'AdminController@getCreateStandart'));
+Route::post('/meow/standart/create', array('as'=>'pcreateStandart', 'uses' => 'AdminController@postCreateStandart'));
+Route::get('/meow/standart/update/{id}', array('as'=>'updateStandart', 'uses' => 'AdminController@getUpdateStandart'));
+Route::put('/meow/standart/update/{id}', array('as'=>'pupdateStandart', 'uses' => 'AdminController@putUpdateStandart'));
+Route::delete('/meow/standart/delete{id}', array('as'=>'deleteStandart', 'uses' => 'AdminController@deleteStandart'));
+
 Route::get('/meow/page', array('as'=>'showPage', 'uses' => 'AdminController@getPages'));
 Route::get('/meow/page/create', array('as'=>'createPage', 'uses' => 'AdminController@getCreatePage'));
 Route::post('/meow/page/create', array('as'=>'pcreatePage', 'uses' => 'AdminController@postCreatePage'));

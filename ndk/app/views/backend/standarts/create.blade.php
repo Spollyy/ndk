@@ -1,35 +1,37 @@
 @extends('backend.layout')
 @section('title')
-    <title>Новости - создание - Meow! CMS</title>
+    <title>Стандарт - создание - Meow! CMS</title>
     <script src="//cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
 
 @stop
 @section('content')
         <div class="container">
-            <h1>Редактировать новость</h1>
+            <h1>Добавить стандарт</h1>
 
             <div style="margin-top:50px;" class="mainbox col-md-8">
 
-                {{Form::open(array('url' => route('pupdateNews'),'class' => 'form-horizontal','files' => true, 'method' => 'put'))}}
+                {{Form::open(array('url' => route('pcreateStandart'),'class' => 'form-horizontal'))}}
                 {{Form::token();}}
                 <div class="input-group">
-                    <label for="title">Заголовок</label>
+                    <label for="title">Название</label>
                     <input id="title" type="text" class="form-control" name="title"
-                           placeholder="Заголовок" value="{{$data->title}}">
+                           placeholder="Название">
                 </div>
+
                 <div class="input-group">
-                    <label for="url">url</label>
+                    <label for="url">УРЛ</label>
                     <input id="url" type="text" class="form-control" name="url"
-                           placeholder="url" value="{{$data->url}}">
+                           placeholder="УРЛ">
                 </div>
-                <br/>
-                                       <div class="input-group">
-                                                                    <label for="text">Условия</label>
+
+
+                                          <br/>
+                                                              <div class="input-group">
+                                                                    <label for="text">Текст</label>
                                                                     <textarea id="text" class="form-control" name="text"
-                                                                           placeholder="text" value="{{$data->text}}">
+                                                                           placeholder="text">
                                                                     </textarea>
                                                                 </div>
-                                                                {{Form::file('file')}}
                 <div class="form-group">
                     <!-- Button -->
 
@@ -40,4 +42,7 @@
                 {{Form::close()}}
             </div>
         </div>
+                <script>
+                    CKEDITOR.replace( 'text' );
+                </script>
 @stop

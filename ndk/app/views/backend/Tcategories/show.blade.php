@@ -4,7 +4,7 @@
 @stop
 @section('content')
     <h1>Категории</h1>
-    <a href="{{route('createSCat')}}" class="btn btn-sm btn-success">Добавить Категорию</a>
+    <a href="{{route('createTCat')}}" class="btn btn-sm btn-success">Добавить Категорию</a>
     <br />
     <br />
     <table class="table table-striped">
@@ -19,13 +19,13 @@
             <td>{{$d->name}}</td>
             <td>/{{$d->url}}</td>
             @if($d->pcat_id > 0)
-            <td>{{SCat::find($d->pcat_id)->name}}</td>
+            <td>{{TCat::find($d->pcat_id)->name}}</td>
             @else
             <td>Основнaя категория</td>
             @endif
             <td>
-                <a href="{{route('updateSCat', array('id' => $d->id))}}" class="btn btn-sm btn-warning glyphicon glyphicon-edit"></a>
-                {{Form::open(array('url' => route('deleteSCat',array('id' => $d->id)), 'method' => 'delete', 'style' => 'display:inline'))}}
+                <a href="{{route('updateTCat', array('id' => $d->id))}}" class="btn btn-sm btn-warning glyphicon glyphicon-edit"></a>
+                {{Form::open(array('url' => route('deleteTCat',array('id' => $d->id)), 'method' => 'delete', 'style' => 'display:inline'))}}
                     <button type="submit" class="btn btn-sm btn-danger glyphicon glyphicon-remove"></button>
                 {{Form::close()}}
             </td>

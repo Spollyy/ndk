@@ -1,12 +1,6 @@
-@extends('meow.master')
+@extends('backend.layout')
 @section('title')
     <title>Pедактирование {{$data->name}} - Meow! CMS</title>
-@stop
-@section('navigation')
-    <li class=""><a href="{{route('admin_aboutus')}}">О нас</a></li>
-    <li class=""><a href="{{route('admin_categories')}}">Категории</a></li>
-    <li class="active"><a>{{$data->name}} редактирование</a></li>
-    <li class=""><a href="{{route('admin_pages')}}">Страницы</a></li>
 @stop
 @section('content')
         <div class="container">
@@ -14,7 +8,7 @@
 
             <div style="margin-top:50px;" class="mainbox col-md-8">
 
-                {{Form::open(array('url' => route('admin_categories_putedit'), 'method' => 'put', 'files' => true,'class' => 'form-horizontal'))}}
+                {{Form::open(array('url' => route('pupdateSCat',['id'=>$data->id]), 'method' => 'put', 'files' => true,'class' => 'form-horizontal'))}}
                 {{Form::token();}}
                 <input type="hidden" name="id" value="{{$data->id}}"/>
                 <div class="input-group">
@@ -33,12 +27,11 @@
 
                 <br />
                 <label for="parent">Родительская категория</label><br/>
-                <select id="parent" name="parent" class="form-control">
-                    <option value="-1">Родительская категория</option>
+                <select id="parent" name="pcat_id" class="form-control">
                 @foreach($all as $d)
-                    @if ($data->id != $d->id )
+                    @if ($data->id != $d->id && $d->pcat_id < 0)
 
-                        @if ($data->parent_id == $d->id)
+                        @if ($data->pcat_id == $d->id)
 
                             <option value="{{$d->id}}" selected>{{$d->name}}</option>
                         @else

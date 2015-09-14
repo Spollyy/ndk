@@ -8,7 +8,7 @@
 
             <div style="margin-top:50px;" class="mainbox col-md-8">
 
-                {{Form::open(array('url' => route('pcreateSCat'), 'class' => 'form-horizontal'))}}
+                {{Form::open(array('url' => route('pcreateTCat'), 'class' => 'form-horizontal'))}}
                 {{Form::token();}}
                 <div class="input-group">
                     <label for="name">Название</label>
