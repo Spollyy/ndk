@@ -36,6 +36,14 @@ class Bd extends Migration {
             $table->char('keywords');
             $table->text('text');
         });
+        Schema::create('standart_page',function($table){
+            $table->increments('id');
+            $table->timestamps();
+            $table->char('title');
+            $table->char('description');
+            $table->char('keywords');
+            $table->text('text');
+        });
 
         Schema::create('vacancy',function($table){
             $table->increments('id');
@@ -108,6 +116,13 @@ class Bd extends Migration {
             $table->char('keywords');
             $table->char('image');
             $table->text('text');
+        });
+
+        Schema::create('service', function($table) {
+            $table->increments('id');
+            $table->timestamps();
+            $table->char('title');
+            $table->text('full');
         });
 
         Schema::create('service', function($table){

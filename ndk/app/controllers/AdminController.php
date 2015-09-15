@@ -221,7 +221,13 @@ class AdminController extends BaseController
     public function getPages()
     {
         $p = Pages::paginate(25);
-        return View::make('backend.page.show')->with('data', $p);
+        $mp = MPage::find(1);
+        $np = NPage::find(1);
+        $pp = PPage::find(1);
+        $sp = SPage::find(1);
+        $stp = StPage::find(1);
+        $tp = TPage::find(1);
+        return View::make('backend.pages.show')->with('data', $p);
     }
     public function postCreatePage()
     {
@@ -240,12 +246,12 @@ class AdminController extends BaseController
     }
     public function getCreatePage()
     {
-        return View::make('backend.page.create');
+        return View::make('backend.pages.create');
     }
     public function getUpdatePage($id)
     {
         $p = Pages::find($id);
-        return View::make('backend.page.edit')->with('data', $p);
+        return View::make('backend.pages.edit')->with('data', $p);
     }
     public function putUpdatePage($id)
     {
