@@ -16,6 +16,8 @@ Route::get('/', function()
 	return View::make('backend.login');
 });
 Route::get('vacancy', array('as' => 'vacancy', 'uses' => 'HomeController@getVacancys' ));
+Route::get('news', ['as' => 'news', 'uses' => 'HomeController@getNews']);
+Route::get('news/{url}', ['as' => 'post', 'uses' => 'HomeController@getPost']);
 
 Route::get('/meow/main', array('as' => 'main', 'uses' => 'AdminController@getTitle'));
 
