@@ -78,7 +78,6 @@ class Bd extends Migration {
             $table->char('title');
             $table->char('description');
             $table->char('keywords');
-            $table->char('image');
             $table->text('text');
         });
 
@@ -114,7 +113,6 @@ class Bd extends Migration {
             $table->char('title');
             $table->char('description');
             $table->char('keywords');
-            $table->char('image');
             $table->text('text');
         });
 
@@ -149,9 +147,7 @@ class Bd extends Migration {
             $table->char('title');
             $table->char('description');
             $table->char('keywords');
-            $table->char('image');
             $table->text('text');
-            $table->char('url');
 
         });
 

@@ -221,12 +221,6 @@ class AdminController extends BaseController
     public function getPages()
     {
         $p = Pages::paginate(25);
-        $mp = MPage::find(1);
-        $np = NPage::find(1);
-        $pp = PPage::find(1);
-        $sp = SPage::find(1);
-        $stp = StPage::find(1);
-        $tp = TPage::find(1);
         return View::make('backend.pages.show')->with('data', $p);
     }
     public function postCreatePage()
