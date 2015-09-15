@@ -4,7 +4,7 @@
 @stop
 @section('content')
     <h1>Стандарт</h1>
-    <a href="" class="btn btn-sm btn-success">Добавить стандарт</a>
+    <a href="{{route('createStandart')}}"  class="btn btn-sm btn-success">Добавить стандарт</a>
     <br />
     <br />
     <table class="table table-striped">

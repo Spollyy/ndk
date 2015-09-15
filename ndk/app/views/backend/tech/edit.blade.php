@@ -46,6 +46,8 @@
                         <button type="submit" id="btn-login" class="btn btn-success">Создать </button>
                     </div>
                 </div>
+
+                {{Form::file('file')}}
                 {{Form::close()}}
             </div>
         </div>

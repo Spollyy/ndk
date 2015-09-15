@@ -1,6 +1,6 @@
 @extends('backend.layout')
 @section('title')
-    <title>Новости - создание - Meow! CMS</title>
+    <title>Новости - редактирование - Meow! CMS</title>
     <script src="//cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
 
 @stop
@@ -26,7 +26,7 @@
                                        <div class="input-group">
                                                                     <label for="text">Условия</label>
                                                                     <textarea id="text" class="form-control" name="text"
-                                                                           placeholder="text" value="{{$data->text}}">
+                                                                           placeholder="text" value="{{$data->full}}">
                                                                     </textarea>
                                                                 </div>
                                                                 {{Form::file('file')}}
@@ -39,5 +39,8 @@
                 </div>
                 {{Form::close()}}
             </div>
+                            <script>
+                                CKEDITOR.replace( 'text' );
+                            </script>
         </div>
 @stop

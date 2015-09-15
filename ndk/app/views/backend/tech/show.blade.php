@@ -4,7 +4,7 @@
 @stop
 @section('content')
     <h1>Проекты</h1>
-    <a href="" class="btn btn-sm btn-success">Добавить технику</a>
+    <a href="{{route('createTech')}}"  class="btn btn-sm btn-success">Добавить технику</a>
     <br />
     <br />
     <table class="table table-striped">

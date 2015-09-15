@@ -1,15 +1,46 @@
 @extends('backend.layout')
 @section('title')
-    <title>Вакансии - Meow! CMS</title>
+    <title>Страницы - Meow! CMS</title>
 @stop
 @section('content')
-    <h1>Вакансии</h1>
-    <a href="" class="btn btn-sm btn-success">Добавить вакансию</a>
+    <h1>Страницы</h1>
     <br />
     <br />
     <table class="table table-striped">
         <tr>
             <td><b>Имя</b></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Главная</b></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Новости</b></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Проекты</b></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Стандарты</b></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Техника</b></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Вакансии</b></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Контакты</b></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Услуги</b></td>
             <td></td>
         </tr>
         @foreach($data as $d)

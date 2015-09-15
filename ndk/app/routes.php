@@ -15,6 +15,8 @@ Route::get('/', function()
 {
 	return View::make('backend.login');
 });
+Route::get('vacancy', array('as' => 'vacancy', 'uses' => 'HomeController@getVacancys' ));
+
 Route::get('/meow/main', array('as' => 'main', 'uses' => 'AdminController@getTitle'));
 
 Route::get('/meow/vacancy', array('as'=>'showVacancy', 'uses' => 'AdminController@getVacancys'));
@@ -23,6 +25,31 @@ Route::post('/meow/vacancy/create', array('as'=>'pcreateVacancy', 'uses' => 'Adm
 Route::get('/meow/vacancy/update/{id}', array('as'=>'updateVacancy', 'uses' => 'AdminController@getUpdateVacancy'));
 Route::put('/meow/vacancy/update/{id}', array('as'=>'pupdateVacancy', 'uses' => 'AdminController@putUpdateVacancy'));
 Route::delete('/meow/vacancy/delete{id}', array('as'=>'deleteVacancy', 'uses' => 'AdminController@deleteVacancy'));
+
+Route::get('/meow/page/main', ['as' => 'updateMain', 'uses' => 'AdminController@getUpdateMain']);
+Route::put('/meow/page/main', ['as' => 'pupdateMain', 'uses' => 'AdminController@postUpdateMain']);
+
+Route::get('/meow/page/contact', ['as' => 'updateContact', 'uses' => 'AdminController@getUpdateContact']);
+Route::put('/meow/page/contact', ['as' => 'pupdateContact', 'uses' => 'AdminController@postUpdateContact']);
+
+Route::get('/meow/page/npage', ['as' => 'updateNPage', 'uses' => 'AdminController@getUpdateNPage']);
+Route::put('/meow/page/npage', ['as' => 'pupdateNPage', 'uses' => 'AdminController@postUpdateNPage']);
+
+Route::get('/meow/page/spage', ['as' => 'updateSPage', 'uses' => 'AdminController@getUpdateSPage']);
+Route::put('/meow/page/spage', ['as' => 'pupdateSPage', 'uses' => 'AdminController@postUpdateSPage']);
+
+Route::get('/meow/page/ppage', ['as' => 'updatePPage', 'uses' => 'AdminController@getUpdatePPage']);
+Route::put('/meow/page/ppage', ['as' => 'pupdatePPage', 'uses' => 'AdminController@postUpdatePPage']);
+
+Route::get('/meow/page/tpage', ['as' => 'updateTPage', 'uses' => 'AdminController@getUpdateTPage']);
+Route::put('/meow/page/tpage', ['as' => 'pupdateTPage', 'uses' => 'AdminController@postUpdateTPage']);
+
+Route::get('/meow/page/stpage', ['as' => 'updateStPage', 'uses' => 'AdminController@getUpdateStPage']);
+Route::put('/meow/page/stpage', ['as' => 'pupdateStPage', 'uses' => 'AdminController@postUpdateStPage']);
+
+Route::get('/meow/page/vpage', ['as' => 'updateVPage', 'uses' => 'AdminController@getUpdateVPage']);
+Route::put('/meow/page/vpage', ['as' => 'pupdateVPage', 'uses' => 'AdminController@postUpdateVPage']);
+
 
 Route::get('/meow/project', array('as'=>'showProject', 'uses' => 'AdminController@getProjects'));
 Route::get('/meow/project/create', array('as'=>'createProject', 'uses' => 'AdminController@getCreateProject'));
@@ -73,7 +100,7 @@ Route::get('/meow/tcat/update/{id}', array('as'=>'updateTCat', 'uses' => 'AdminC
 Route::put('/meow/tcat/update/{id}', array('as'=>'pupdateTCat', 'uses' => 'AdminController@putUpdateTCat'));
 Route::delete('/meow/tcat/delete{id}', array('as'=>'deleteTCat', 'uses' => 'AdminController@deleteTCat'));
 
-Route::get('/meow/tech', array('as'=>'showTech', 'uses' => 'AdminController@getTech'));
+Route::get('/meow/tech', array('as'=>'showTech', 'uses' => 'AdminController@getTechs'));
 Route::get('/meow/tech/create', array('as'=>'createTech', 'uses' => 'AdminController@getCreateTech'));
 Route::post('/meow/tech/create', array('as'=>'pcreateTech', 'uses' => 'AdminController@postCreateTech'));
 Route::get('/meow/tech/update/{id}', array('as'=>'updateTech', 'uses' => 'AdminController@getUpdateTech'));

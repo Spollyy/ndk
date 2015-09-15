@@ -1,9 +1,9 @@
 @extends('backend.layout')
 @section('title')
-    <title>Вакансии - Meow! CMS</title>
+    <title>Новости - Meow! CMS</title>
 @stop
 @section('content')
-    <h1>Вакансии</h1>
+    <h1>Новости</h1>
     <a href="{{route('createNews')}}" class="btn btn-sm btn-success">Добавить новость</a>
     <br />
     <br />

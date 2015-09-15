@@ -39,5 +39,9 @@
                 </div>
                 {{Form::close()}}
             </div>
+
         </div>
+                        <script>
+                            CKEDITOR.replace( 'text' );
+                        </script>
 @stop

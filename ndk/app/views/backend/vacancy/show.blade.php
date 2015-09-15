@@ -4,7 +4,7 @@
 @stop
 @section('content')
     <h1>Вакансии</h1>
-    <a href="" class="btn btn-sm btn-success">Добавить вакансию</a>
+    <a href="{{route('createVacancy')}}"  class="btn btn-sm btn-success">Добавить вакансию</a>
     <br />
     <br />
     <table class="table table-striped">

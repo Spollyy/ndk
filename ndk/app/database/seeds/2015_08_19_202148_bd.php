@@ -116,7 +116,7 @@ class Bd extends Migration {
             $table->text('text');
         });
 
-        Schema::create('service', function($table) {
+        Schema::create('standart', function($table) {
             $table->increments('id');
             $table->timestamps();
             $table->char('title');

@@ -27,7 +27,7 @@
 
                 <br />
                 <label for="parent">Родительская категория</label><br/>
-                <select id="parent" name="pcat_id" class="form-control">
+                <select id="parent" name="cat_id" class="form-control">
                 @foreach($all as $d)
                     @if ($data->id != $d->id && $d->pcat_id < 0)
 

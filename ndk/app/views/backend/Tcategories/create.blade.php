@@ -35,7 +35,7 @@
                 @endforeach
                 </select>
 
-                <br/>
+                <br/>                {{Form::file('file')}}
 
                 <div class="form-group">
                     <!-- Button -->

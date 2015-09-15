@@ -177,7 +177,7 @@ class AdminController extends BaseController
         $p->full = $input['text'];
        // var_dump(Input::file());exit();
         if (isset($input ['file'])) {
-            $p->file = Input::file('file')->getFilename() . '.' . Input::file('file')->guessClientExtension();
+            $p->image = Input::file('file')->getFilename() . '.' . Input::file('file')->guessClientExtension();
             $input ['file']->move($destination, Input::file('file')->getFilename() . '.' . Input::file('file')->guessClientExtension());
         }
         $p->url = $input['url'];
@@ -204,7 +204,7 @@ class AdminController extends BaseController
             if (isset($input ['full']))
                 $p->full = $input['text'];
         if (isset($input ['file'])) {
-            $p->file = Input::file('file')->getFilename() . '.' . Input::file('file')->guessClientExtension();
+            $p->image = Input::file('file')->getFilename() . '.' . Input::file('file')->guessClientExtension();
             $input ['file']->move($destination, Input::file('file')->getFilename() . '.' . Input::file('file')->guessClientExtension());
         }
         if (isset($input ['url']))

@@ -6,7 +6,7 @@
 @stop
 @section('content')
     <div class="container">
-        <h1>Добавить новость</h1>
+        <h1>Добавить вакансию</h1>
 
         <div style="margin-top:50px;" class="mainbox col-md-8">
 
